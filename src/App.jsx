@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './index.css'
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -25,7 +26,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="box">
       <h2>Currency Counter</h2>
 
       <input type="number" value={amount} onChange={(e)=>setAmount(e.target.value)} placeholder="Enter amount"/>
@@ -37,7 +38,7 @@ function App() {
       ) : (
         <ul>
           {Object.entries(result).map(([note, count]) => (
-            <li key={note}>₹{note}-{count}</li>
+            <li key={note}>Rs.{note}-{count}</li>
           ))}
         </ul>
       )}
